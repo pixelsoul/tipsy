@@ -3,31 +3,50 @@ import { ref, watch } from "vue";
 
 const billDivide = ref(1);
 
+const emits = defineEmits(["update:billDivide"]);
+
 watch(
     () => billDivide.value,
-    (newValue) => {
+    (newValue, oldValue) => {
         if (newValue < 1) {
             billDivide.value = 1;
         }
     }
 );
 
-const emits = defineEmits(["update:bill", "update:billDivide"]);
+const updateBillDivide = (value) => {
+    value < 1
+        ? (value = 1)
+        : ((billDivide.value = value), emits("update:billDivide", value));
+};
 </script>
 
 <template>
     <div class="bill-divide">
-        <div class="bill-divide__divide">
+        <div class="bill-divide__label">
             <label for="bill-divide">Number of People</label>
+        </div>
+        <div class="bill-divide__divide">
+            <button
+                class="bill-divide__button"
+                @click="updateBillDivide(billDivide - 1)"
+            >
+                -
+            </button>
             <input
                 id="bill-divide"
                 type="number"
                 v-model="billDivide"
-                @input="
-                    $emit('update:billDivide', Number($event.target.value))
-                "
+                @input="updateBillDivide(Number($event.target.value))"
                 placeholder="1"
+                disabled
             />
+            <button
+                class="bill-divide__button"
+                @click="updateBillDivide(billDivide + 1)"
+            >
+                +
+            </button>
         </div>
     </div>
 </template>
@@ -38,12 +57,26 @@ const emits = defineEmits(["update:bill", "update:billDivide"]);
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 1rem;
+    margin: 0rem;
+}
+
+.bill-divide__button {
+    font-size: 2rem;
+    padding: 0.5rem;
+    border: 0px solid #ccc;
+    border-radius: 0.5rem;
+    text-align: center;
+    width: 100%;
+    background-color: #121212;
+}
+
+.bill-divide__button:focus {
+    outline: none;
 }
 
 .bill-divide__divide {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     margin: 1rem;
@@ -72,33 +105,5 @@ const emits = defineEmits(["update:bill", "update:billDivide"]);
 .bill-divide__divide input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
-}
-
-@media (min-width: 768px) {
-    .bill-divide {
-        flex-direction: row;
-    }
-
-    .bill-divide__divide {
-        margin: 0 1rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .bill-divide {
-        flex-direction: column;
-    }
-}
-
-@media (min-width: 1440px) {
-    .bill-divide {
-        flex-direction: row;
-    }
-}
-
-@media (min-width: 2560px) {
-    .bill-divide {
-        flex-direction: column;
-    }
 }
 </style>

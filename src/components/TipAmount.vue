@@ -58,23 +58,15 @@ const total = computed(() => {
 
 .tip-amount__data {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-items: start;
     justify-content: center;
 }
 
-.tip-amount__tip-amount {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    background-color: #00494d;
-    color: #fff;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-}
-
+.tip-amount__tip-amount,
 .tip-amount__total {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    margin: 0.5rem;
     background-color: #00494d;
     color: #fff;
     padding: 0.5rem;

@@ -24,6 +24,15 @@ const updateBillDivide = (value) => {
             :billDivide="billDivide"
             @update:billDivide="updateBillDivide"
         />
+        <!-- if billDivide > 1 then show bill per person -->
+        <Transition name="slide-fade">
+            <div v-if="billDivide > 1" class="bill-per-person">
+                <div class="bill-per-person__label">Bill Per Person</div>
+                <div class="bill-per-person__amount">
+                    ${{ (bill / billDivide).toFixed(2) }}
+                </div>
+            </div>
+        </Transition>
         <Tip :bill="bill / billDivide" :tipPercent="10" />
         <Tip :bill="bill / billDivide" :tipPercent="15" />
         <Tip :bill="bill / billDivide" :tipPercent="20" />
@@ -31,4 +40,18 @@ const updateBillDivide = (value) => {
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.slide-fade-enter-active {
+    transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+    transition: all 0.4s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+    transform: translateY(20px);
+    opacity: 0;
+}
+</style>
