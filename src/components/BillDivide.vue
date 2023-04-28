@@ -68,6 +68,7 @@ const updateBillDivide = (value) => {
     text-align: center;
     width: 100%;
     background-color: #121212;
+    cursor: pointer;
 }
 
 .bill-divide__button:focus {

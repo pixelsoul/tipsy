@@ -46,7 +46,8 @@ const updateBillDivide = (value) => {
 }
 
 .slide-fade-leave-active {
-    transition: all 0.4s cubic-bezier(1, 0.5, 0.8, 1);
+    /* transition: all 0.4s cubic-bezier(1, 0.5, 0.8, 1); */
+    transition: all 0.3s ease-out;
 }
 
 .slide-fade-enter-from,
