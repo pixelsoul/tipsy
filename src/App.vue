@@ -4,6 +4,7 @@ import { ref } from "vue";
 import Bill from "./components/BillAmount.vue";
 import BillDivide from "./components/BillDivide.vue";
 import Tip from "./components/TipAmount.vue";
+import Card from "./components/Card.vue";
 
 const bill = ref(0.0);
 const billDivide = ref(1);
@@ -24,14 +25,13 @@ const updateBillDivide = (value) => {
             :billDivide="billDivide"
             @update:billDivide="updateBillDivide"
         />
-        <!-- if billDivide > 1 then show bill per person -->
         <Transition name="slide-fade">
-            <div v-if="billDivide > 1" class="bill-per-person">
+            <Card v-if="billDivide > 1">
                 <div class="bill-per-person__label">Bill Per Person</div>
                 <div class="bill-per-person__amount">
                     ${{ (bill / billDivide).toFixed(2) }}
                 </div>
-            </div>
+            </Card>
         </Transition>
         <Tip :bill="bill / billDivide" :tipPercent="10" />
         <Tip :bill="bill / billDivide" :tipPercent="15" />
