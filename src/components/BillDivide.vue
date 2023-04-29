@@ -68,6 +68,7 @@ const updateBillDivide = (value) => {
     text-align: center;
     width: 100%;
     background-color: #121212;
+    color: #e2e2e2;
     cursor: pointer;
 }
 

@@ -45,6 +45,7 @@ const emits = defineEmits(["update:bill"]);
     text-align: center;
     width: 100%;
     background-color: transparent;
+    color: #e2e2e2;
 }
 
 .bill-amount__bill input:focus {

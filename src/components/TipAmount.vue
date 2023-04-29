@@ -47,7 +47,7 @@ const total = computed(() => {
     font-size: 1rem;
     margin-bottom: 0.5rem;
     background-color: #181818;
-    color: #fff;
+    color: #e2e2e2;
     padding: 0.5rem;
     border-radius: 0.5rem 0.5rem 0 0;
     display: flex;
