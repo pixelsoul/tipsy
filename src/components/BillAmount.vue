@@ -11,10 +11,10 @@ const emits = defineEmits(["update:bill"]);
         <div class="bill-amount__bill">
             <input
                 id="bill-amount"
-                type="number"
-                v-model="bill"
-                @input="$emit('update:bill', Number($event.target.value))"
-                placeholder="$0.00"
+                type="text"
+                v-model.number="bill"
+                @input="$emit('update:bill', bill)"
+                placeholder="$0"
             />
         </div>
     </div>
@@ -40,12 +40,12 @@ const emits = defineEmits(["update:bill"]);
 .bill-amount__bill input {
     font-size: 3.5rem;
     padding: 0.5rem;
-    border: 0px solid #4e4e4e;
+    border: 0px;
     border-radius: 0.5rem;
     text-align: center;
     width: 100%;
     background-color: transparent;
-    color: #e2e2e2;
+    color: var(--primary);
 }
 
 .bill-amount__bill input:focus {

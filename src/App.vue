@@ -5,6 +5,7 @@ import Bill from "./components/BillAmount.vue";
 import BillDivide from "./components/BillDivide.vue";
 import Tip from "./components/TipAmount.vue";
 import Card from "./components/Card.vue";
+import Currency from "./utils/CurrencyFormat.js";
 
 const bill = ref(0.0);
 const billDivide = ref(1);
@@ -29,7 +30,7 @@ const updateBillDivide = (value) => {
             <Card v-if="billDivide > 1">
                 <div class="bill-per-person__label">Bill Per Person</div>
                 <div class="bill-per-person__amount">
-                    ${{ (bill / billDivide).toFixed(2) }}
+                    {{ Currency(bill / billDivide) }}
                 </div>
             </Card>
         </Transition>

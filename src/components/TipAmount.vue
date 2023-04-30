@@ -1,6 +1,7 @@
 <script setup>
 import { computed } from "vue";
 import Card from "./Card.vue";
+import Currency from "../utils/CurrencyFormat.js";
 
 const props = defineProps({
     bill: {
@@ -30,10 +31,10 @@ const total = computed(() => {
 
         <div class="tip-amount__data">
             <div class="tip-amount__tip-amount">
-                Tip ${{ tipAmount.toFixed(2) }}
+                Tip {{ Currency(tipAmount) }}
             </div>
             <div class="tip-amount__total">
-                Total ${{ total.toFixed(2) }}
+                Total {{ Currency(total) }}
             </div>
         </div>
     </Card>
@@ -42,15 +43,15 @@ const total = computed(() => {
 <style scoped>
 .tip-amount {
     margin: 1rem;
-    background-color: #252525;
+    background-color: var(--black);
     border-radius: 0.5rem;
 }
 
 .tip-amount__tip-percent {
     font-size: 1rem;
     margin-bottom: 0.5rem;
-    background-color: #181818;
-    color: #e2e2e2;
+    background-color: var(--black);
+    color: var(--white);
     padding: 0.5rem;
     display: flex;
     align-items: left;
@@ -70,8 +71,9 @@ const total = computed(() => {
 .tip-amount__total {
     font-size: 1rem;
     margin: 0.5rem;
-    background-color: #00494d;
-    color: #fff;
+    background-color: var(--primary);
+    color: var(--black);
+    font-weight: bold;
     padding: 0.5rem;
     border-radius: 0.5rem;
 }

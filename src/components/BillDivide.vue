@@ -60,6 +60,10 @@ const updateBillDivide = (value) => {
     margin: 0rem;
 }
 
+.bill-divide input:disabled {
+    color: var(--white);
+}
+
 .bill-divide__button {
     font-size: 2rem;
     padding: 0.5rem;
@@ -67,8 +71,8 @@ const updateBillDivide = (value) => {
     border-radius: 0.5rem;
     text-align: center;
     width: 100%;
-    background-color: #121212;
-    color: #e2e2e2;
+    background-color: var(--black);
+    color: var(--white);
     cursor: pointer;
 }
 
