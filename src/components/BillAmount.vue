@@ -11,7 +11,7 @@ const emits = defineEmits(["update:bill"]);
         <div class="bill-amount__bill">
             <input
                 id="bill-amount"
-                type="text"
+                type="number"
                 v-model.number="bill"
                 @input="$emit('update:bill', bill)"
                 placeholder="$0"
