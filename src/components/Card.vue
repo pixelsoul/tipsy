@@ -21,7 +21,7 @@
     margin: 1rem 0.5rem 1rem 0.5rem;
     padding: 0rem 0.5rem 0rem 0.5rem;
     border-radius: 0.5rem;
-    background-color: #252525;
+    background-color: var(--background-light);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
 }
 
@@ -30,11 +30,12 @@
     flex-direction: row;
     align-items: center;
     justify-content: left;
-    margin: 0rem;
     padding: 0.5rem 0.5rem 0.5rem 0.5rem;
     width: 100%;
     border-radius: 0.5rem 0.5rem 0 0;
-    background-color: #121212;
+    background-color: var(--black);
+    color: var(--white);
+    font-weight: 300;
     position: relative;
 }
 
@@ -43,11 +44,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0rem;
     padding: 0.5rem;
     width: 100%;
     border-radius: 0;
-    background-color: var(--color-primary);
 }
 
 .card__card-footer {

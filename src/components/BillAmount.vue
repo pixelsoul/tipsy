@@ -39,6 +39,8 @@ const emits = defineEmits(["update:bill"]);
 
 .bill-amount__bill input {
     font-size: 3.5rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
     padding: 0.5rem;
     border: 0px;
     border-radius: 0.5rem;

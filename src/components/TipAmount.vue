@@ -41,25 +41,6 @@ const total = computed(() => {
 </template>
 
 <style scoped>
-.tip-amount {
-    margin: 1rem;
-    background-color: var(--black);
-    border-radius: 0.5rem;
-}
-
-.tip-amount__tip-percent {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    background-color: var(--black);
-    color: var(--white);
-    padding: 0.5rem;
-    display: flex;
-    align-items: left;
-    justify-content: left;
-    width: auto;
-    border-radius: 0.5rem 0.5rem 0 0;
-}
-
 .tip-amount__data {
     display: flex;
     flex-direction: row;
@@ -69,20 +50,16 @@ const total = computed(() => {
 
 .tip-amount__tip-amount,
 .tip-amount__total {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin: 0.5rem;
     background-color: var(--primary);
     color: var(--black);
-    font-weight: bold;
+    font-weight: 500;
     padding: 0.5rem;
     border-radius: 0.5rem;
 }
 
 @media (min-width: 768px) {
-    .tip-amount {
-        flex-direction: row;
-    }
-
     .tip-amount__data {
         flex-direction: row;
     }
@@ -90,11 +67,5 @@ const total = computed(() => {
     .tip-amount__tip-amount {
         margin-right: 0.5rem;
     }
-}
-
-@media (min-width: 1024px) {
-}
-
-@media (min-width: 1440px) {
 }
 </style>
