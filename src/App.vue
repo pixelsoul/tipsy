@@ -27,10 +27,14 @@ const updateBillDivide = (value) => {
             @update:billDivide="updateBillDivide"
         />
         <Transition name="slide-fade">
-            <Card v-if="billDivide > 1">
-                <div class="bill-per-person__label">Bill Per Person</div>
-                <div class="bill-per-person__amount">
-                    {{ Currency(bill / billDivide) }}
+            <Card v-if="billDivide > 1" class="outer">
+                <div class="inner">
+                    <div class="bill-per-person__label">
+                        Bill Per Person
+                    </div>
+                    <div class="bill-per-person__amount">
+                        {{ Currency(bill / billDivide) }}
+                    </div>
                 </div>
             </Card>
         </Transition>
@@ -42,18 +46,35 @@ const updateBillDivide = (value) => {
 </template>
 
 <style scoped>
-.slide-fade-enter-active {
+.slide-fade-enter-active,
+.slide-fade-leave-active {
     transition: all 0.3s ease-out;
 }
 
 .slide-fade-leave-active {
     /* transition: all 0.4s cubic-bezier(1, 0.5, 0.8, 1); */
     transition: all 0.3s ease-out;
+    transition-delay: 0.3s;
 }
 
 .slide-fade-enter-from,
 .slide-fade-leave-to {
     transform: translateY(20px);
+    opacity: 0;
+}
+
+.slide-fade-enter-active .inner,
+.slide-fade-leave-active .inner {
+    transition: all 0.3s ease-in-out;
+}
+
+.slide-fade-enter-active .inner {
+    transition-delay: 0.1s;
+}
+
+.slide-fade-enter-from .inner,
+.slide-fade-leave-to .inner {
+    transform: translateY(10px);
     opacity: 0;
 }
 </style>
