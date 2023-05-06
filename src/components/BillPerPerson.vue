@@ -1,6 +1,6 @@
 <script setup>
 import Card from "./Card.vue";
-import Currency from "../utils/CurrencyFormat.js";
+import CurrencyDisplay from "./CurrencyDisplay.vue";
 
 const props = defineProps({
     bill: {
@@ -21,44 +21,16 @@ const props = defineProps({
         <Card v-if="billDivide > 1" class="outer">
             <template #header> Bill Divided </template>
             <div class="inner">
-                <div class="bill-per-person__amount">
-                    <span class="top-title">Per Person</span>
-                    {{ Currency(bill / billDivide) }}
-                </div>
+                <CurrencyDisplay
+                    title="Per Person"
+                    :amount="bill"
+                ></CurrencyDisplay>
             </div>
         </Card>
     </Transition>
 </template>
 
 <style scoped>
-.bill-per-person__label {
-    font-size: 1.2rem;
-    margin: 0.5rem;
-    background-color: var(--primary);
-    color: var(--black);
-    font-weight: 500;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-}
-
-.bill-per-person__amount {
-    font-size: 1.2rem;
-    margin: 0.5rem;
-    color: var(--white);
-    font-weight: 500;
-    padding: 0.4rem;
-    border-radius: 0.5rem;
-}
-
-.bill-per-person__amount .top-title {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--primary);
-    display: block;
-    margin-bottom: 0.2rem;
-    text-transform: uppercase;
-}
-
 .slide-fade-enter-active,
 .slide-fade-leave-active {
     transition: all 0.3s ease-out;
