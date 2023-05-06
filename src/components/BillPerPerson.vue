@@ -23,7 +23,7 @@ const props = defineProps({
             <div class="inner">
                 <CurrencyDisplay
                     title="Per Person"
-                    :amount="bill"
+                    :amount="bill / billDivide"
                 ></CurrencyDisplay>
             </div>
         </Card>
