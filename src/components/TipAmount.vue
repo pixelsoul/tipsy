@@ -31,10 +31,12 @@ const total = computed(() => {
 
         <div class="tip-amount__data">
             <div class="tip-amount__tip-amount">
-                Tip {{ Currency(tipAmount) }}
+                <span class="top-title">Tip</span>
+                {{ Currency(tipAmount) }}
             </div>
             <div class="tip-amount__total">
-                Total {{ Currency(total) }}
+                <span class="top-title">Total</span>
+                {{ Currency(total) }}
             </div>
         </div>
     </Card>
@@ -52,11 +54,20 @@ const total = computed(() => {
 .tip-amount__total {
     font-size: 1.2rem;
     margin: 0.5rem;
-    background-color: var(--primary);
-    color: var(--black);
+    /* background-color: var(--primary); */
+    color: var(--white);
     font-weight: 500;
     padding: 0.5rem;
     border-radius: 0.5rem;
+}
+
+.top-title {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 0.2rem;
+    text-transform: uppercase;
 }
 
 @media (min-width: 768px) {

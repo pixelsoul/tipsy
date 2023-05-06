@@ -43,8 +43,8 @@ const props = defineProps({
 .bill-per-person__amount {
     font-size: 1.2rem;
     margin: 0.5rem;
-    background-color: var(--primary);
-    color: var(--black);
+    /* background-color: var(--primary); */
+    color: var(--white);
     font-weight: 500;
     padding: 0.4rem;
     border-radius: 0.5rem;
