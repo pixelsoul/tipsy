@@ -54,7 +54,6 @@ const total = computed(() => {
 .tip-amount__total {
     font-size: 1.2rem;
     margin: 0.5rem;
-    /* background-color: var(--primary); */
     color: var(--white);
     font-weight: 500;
     padding: 0.5rem;

@@ -19,9 +19,10 @@ const props = defineProps({
 <template>
     <Transition name="slide-fade">
         <Card v-if="billDivide > 1" class="outer">
-            <template #header> Per person </template>
+            <template #header> Bill Divided </template>
             <div class="inner">
                 <div class="bill-per-person__amount">
+                    <span class="top-title">Per Person</span>
                     {{ Currency(bill / billDivide) }}
                 </div>
             </div>
@@ -43,11 +44,19 @@ const props = defineProps({
 .bill-per-person__amount {
     font-size: 1.2rem;
     margin: 0.5rem;
-    /* background-color: var(--primary); */
     color: var(--white);
     font-weight: 500;
     padding: 0.4rem;
     border-radius: 0.5rem;
+}
+
+.bill-per-person__amount .top-title {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 0.2rem;
+    text-transform: uppercase;
 }
 
 .slide-fade-enter-active,
