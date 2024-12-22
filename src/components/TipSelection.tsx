@@ -24,8 +24,8 @@ const TipSelection = ({ tip, amount, setTip, tipTotal }: TipSelectionProps) => {
                         className={`${
                             tip === value
                                 ? "bg-green-700 text-white"
-                                : "dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:text-white bg-neutral-100 hover:bg-neutral-200 text-black"
-                        } p-2 rounded-md`}
+                                : "dark:bg-slate-900 dark:hover:bg-slate-800 dark:text-white bg-neutral-100 hover:bg-neutral-200 text-black"
+                        } p-2 rounded-md min-w-12`}
                         onClick={() => setTip(value)}>
                         {value}%
                     </button>

@@ -18,7 +18,7 @@ const SplitAmount = ({ perPerson }: SplitAmountProps) => {
     }, [split, perPerson])
 
     const buttonStyles =
-        "dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:text-white bg-neutral-100 hover:bg-neutral-200 text-black p-2 rounded-md focus:outline-none "
+        "dark:bg-slate-900 dark:hover:bg-slate-800 dark:text-white bg-neutral-100 hover:bg-neutral-200 text-black p-2 rounded-md focus:outline-none "
 
     return (
         <div className="flex justify-center">

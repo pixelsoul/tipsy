@@ -54,6 +54,17 @@
         @apply border-border;
     }
     body {
-        @apply font-sans antialiased text-foreground flex flex-col h-screen items-center justify-center dark:bg-neutral-950 dark:text-foreground;
+        @apply font-sans antialiased text-foreground flex flex-col h-screen items-center justify-center dark:bg-background dark:text-foreground;
+    }
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+
+        margin: 0;
+    }
+
+    input[type="number"] {
+        -moz-appearance: textfield;
     }
 }

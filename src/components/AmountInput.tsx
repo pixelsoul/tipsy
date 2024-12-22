@@ -29,7 +29,7 @@ const AmountInput = ({ value, onChange }: AmountInputProps) => {
             <div className="relative">
                 <Input
                     id="Amount"
-                    className="peer ps-6 !text-4xl font-bold text-center h-14 border-0 bg-neutral-100 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100"
+                    className="peer ps-6 !text-4xl font-bold text-center h-14 border-0 bg-neutral-100 text-neutral-900 dark:bg-slate-900 dark:text-neutral-100"
                     placeholder="0.00"
                     value={value}
                     type="number"
