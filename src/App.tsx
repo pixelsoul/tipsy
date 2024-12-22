@@ -15,7 +15,7 @@ const App = () => {
     return (
         <ThemeProvider>
             <div className="container h-screen border flex flex-col md:justify-center px-4">
-                <Card className="px-4 mt-4 md:mt-0">
+                <Card className="px-4 mt-4 md:mt-0 dark:bg-neutral-950">
                     <CardHeader className="flex flex-row items-center justify-between">
                         <CardTitle className="text-2xl">Tip Calculator</CardTitle>
                         <ThemeToggle />

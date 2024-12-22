@@ -17,14 +17,17 @@ const SplitAmount = ({ perPerson }: SplitAmountProps) => {
         perPerson(split)
     }, [split, perPerson])
 
+    const buttonStyles =
+        "dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:text-white bg-neutral-100 hover:bg-neutral-200 text-black p-2 rounded-md focus:outline-none "
+
     return (
         <div className="flex justify-center">
             <div className="flex flex-row gap-4">
-                <Button onClick={() => setSplit(split - 1)}>
+                <Button className={buttonStyles} onClick={() => setSplit(split - 1)}>
                     <FaMinus />
                 </Button>
                 <div className="text-2xl">{split}</div>
-                <Button onClick={() => setSplit(split + 1)}>
+                <Button className={buttonStyles} onClick={() => setSplit(split + 1)}>
                     <FaPlus />
                 </Button>
             </div>

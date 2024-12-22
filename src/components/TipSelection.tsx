@@ -23,8 +23,8 @@ const TipSelection = ({ tip, amount, setTip, tipTotal }: TipSelectionProps) => {
                         key={value}
                         className={`${
                             tip === value
-                                ? "bg-neutral-900 text-white"
-                                : "bg-white text-neutral-900"
+                                ? "bg-green-700 text-white"
+                                : "dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:text-white bg-neutral-100 hover:bg-neutral-200 text-black"
                         } p-2 rounded-md`}
                         onClick={() => setTip(value)}>
                         {value}%
