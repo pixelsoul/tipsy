@@ -12,15 +12,6 @@ const AmountInput = ({ value, onChange }: AmountInputProps) => {
             return
         }
 
-        // const currencyFormatter = new Intl.NumberFormat("en-US", {
-        //     style: "currency",
-        //     currency: "USD",
-        //     minimumFractionDigits: 2,
-        // })
-
-        // const formattedValue = currencyFormatter.format(value)
-        // onChange(parseFloat(formattedValue.replace("$", "")))
-
         onChange(parseFloat(value.toFixed(2)))
     }, [value, onChange])
 
@@ -31,7 +22,7 @@ const AmountInput = ({ value, onChange }: AmountInputProps) => {
                     id="Amount"
                     className="peer ps-6 !text-4xl font-bold text-center h-14 border-0 bg-neutral-100 text-neutral-900 dark:bg-slate-900 dark:text-neutral-100"
                     placeholder="0.00"
-                    value={value}
+                    value={value || ""}
                     type="number"
                     onChange={(e) => onChange(parseFloat(e.target.value))}
                 />

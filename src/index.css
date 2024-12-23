@@ -54,7 +54,7 @@
         @apply border-border;
     }
     body {
-        @apply font-sans antialiased text-foreground flex flex-col h-screen items-center justify-center dark:bg-background dark:text-foreground;
+        @apply font-sans antialiased text-foreground flex flex-col items-center justify-center dark:bg-background dark:text-foreground;
     }
 
     input[type="number"]::-webkit-inner-spin-button,

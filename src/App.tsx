@@ -15,8 +15,8 @@ const App = () => {
 
     return (
         <ThemeProvider>
-            <div className="container h-screen border flex flex-col md:justify-center px-4">
-                <Card className="px-4 mt-4 md:mt-0 bg-transparent backdrop-blur">
+            <div className="container h-auto lg:h-screen border flex flex-col justify-center px-4 py-4">
+                <Card className="px-4 bg-transparent backdrop-blur overflow-auto">
                     <CardHeader className="flex flex-row items-center justify-between px-0">
                         <CardTitle className="text-2xl flex items-center gap-2">
                             <span className="text-4xl text-green-500">
