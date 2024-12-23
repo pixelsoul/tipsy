@@ -5,6 +5,8 @@ import SplitAmount from "@/components/SplitAmount"
 import TipSelection from "@/components/TipSelection"
 import ThemeToggle from "@/components/ThemeToggle"
 import { Card, CardContent, CardTitle, CardHeader, CardFooter } from "@/components/ui/card"
+import { RiMoneyDollarCircleFill } from "react-icons/ri"
+import MakeItRain from "@/components/MakeItRain"
 
 const App = () => {
     const [amount, setAmount] = useState(0)
@@ -14,10 +16,16 @@ const App = () => {
 
     return (
         <ThemeProvider>
+            <MakeItRain count={30} color="green" />
             <div className="container h-screen border flex flex-col md:justify-center px-4">
-                <Card className="px-4 mt-4 md:mt-0 dark:bg-background">
+                <Card className="px-4 mt-4 md:mt-0 bg-transparent backdrop-blur">
                     <CardHeader className="flex flex-row items-center justify-between px-0">
-                        <CardTitle className="text-2xl">Tip Calculator</CardTitle>
+                        <CardTitle className="text-2xl flex items-center gap-2">
+                            <span className="text-4xl text-green-500">
+                                <RiMoneyDollarCircleFill />
+                            </span>{" "}
+                            Tip Calculator
+                        </CardTitle>
                         <ThemeToggle />
                     </CardHeader>
 
