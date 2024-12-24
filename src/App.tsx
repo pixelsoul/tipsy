@@ -68,7 +68,7 @@ const App = () => {
                             </span>
                         </div>
 
-                        <div className="flex flex-row justify-between">
+                        <div className="flex flex-row justify-between text-xl">
                             <span className="flex items-center gap-2">
                                 Total{" "}
                                 {splitAmount > 1 ? (
@@ -97,13 +97,13 @@ const App = () => {
                                                 ease: "easeInOut",
                                                 delay: 0.1,
                                             }}
-                                            className="text-green-500">
+                                            className="text-green-500 text-sm">
                                             / {splitAmount} people
                                         </motion.span>
                                     </AnimatePresence>
                                 ) : null}
                             </span>
-                            <span className="font-bold">
+                            <span className="font-bold ">
                                 <AnimatedNumber
                                     value={(amount + tipTotal) / splitAmount || 0}
                                     duration={0.1}
