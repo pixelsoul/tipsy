@@ -6,6 +6,8 @@ import TipSelection from "@/components/TipSelection"
 import ThemeToggle from "@/components/ThemeToggle"
 import { Card, CardContent, CardTitle, CardHeader, CardFooter } from "@/components/ui/card"
 import { RiMoneyDollarCircleFill } from "react-icons/ri"
+import { motion, AnimatePresence } from "motion/react"
+import AnimatedNumber from "@/components/AnimatedNumber"
 
 const App = () => {
     const [amount, setAmount] = useState(0)
@@ -61,18 +63,56 @@ const App = () => {
                     <CardContent className="flex flex-col border p-4 rounded-lg gap-3">
                         <div className="flex flex-row justify-between">
                             <span>Tip total</span>
-                            <span className="font-bold">${tipTotal.toFixed(2)}</span>
+                            <span className="font-bold">
+                                <AnimatedNumber value={tipTotal || 0} duration={0.2} />
+                            </span>
                         </div>
 
                         <div className="flex flex-row justify-between">
-                            <span>Total per person</span>
+                            <span className="flex items-center gap-2">
+                                Total{" "}
+                                {splitAmount > 1 ? (
+                                    <AnimatePresence>
+                                        <motion.span
+                                            initial={{
+                                                opacity: 0,
+                                                y: -10,
+                                                scale: 0.9,
+                                                display: "none",
+                                            }}
+                                            animate={{
+                                                opacity: 1,
+                                                y: 0,
+                                                scale: 1,
+                                                display: "block",
+                                            }}
+                                            exit={{
+                                                opacity: 0,
+                                                y: -10,
+                                                scale: 0.9,
+                                                display: "none",
+                                            }}
+                                            transition={{
+                                                duration: 0.2,
+                                                ease: "easeInOut",
+                                                delay: 0.1,
+                                            }}
+                                            className="text-green-500">
+                                            / {splitAmount} people
+                                        </motion.span>
+                                    </AnimatePresence>
+                                ) : null}
+                            </span>
                             <span className="font-bold">
-                                ${((amount + tipTotal) / splitAmount).toFixed(2)}
+                                <AnimatedNumber
+                                    value={(amount + tipTotal) / splitAmount || 0}
+                                    duration={0.1}
+                                />
                             </span>
                         </div>
                     </CardContent>
 
-                    <CardFooter className="flex gap-3 items-center justify-center mt-20 text-sm text-slate-500">
+                    <CardFooter className="flex gap-3 items-center justify-center mt-10 text-sm text-slate-500">
                         <a
                             href="https://pixelsoul.com"
                             target="_blank"
